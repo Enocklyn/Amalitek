@@ -8,6 +8,8 @@ import Amalitek.amalitek.ProductLine.ProductLine;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 import java.util.List;
 
 
@@ -18,7 +20,7 @@ import java.util.List;
  * @author lys
  */
 @Entity
-
+@Table(name = "_Product")
 public class Product {
     @Id
     private int Id;

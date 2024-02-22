@@ -9,12 +9,14 @@ import Amalitek.amalitek.Product.Product;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 /**
  *
  * @author lys
  */
 @Entity
+ @Table(name = "_ProductLine")
 public class ProductLine {
    @Id
    private int id;

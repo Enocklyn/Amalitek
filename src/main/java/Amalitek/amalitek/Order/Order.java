@@ -8,12 +8,8 @@ import Amalitek.amalitek.ProductLine.ProductLine;
 import Amalitek.amalitek.User.User;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 
@@ -22,6 +18,7 @@ import java.util.List;
  * @author lys
  */
 @Entity
+@Table(name = "_Order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
