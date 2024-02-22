@@ -75,5 +75,15 @@ public class ProductLine {
     public void setPrice(float price) {
         this.price = price;
     }
-   
+
+    public ProductLine(int id, int quantity, int stock, float price) {
+        this.id = id;
+        this.quantity = quantity;
+        this.stock = stock;
+        this.price = price;
+    }
+
+    public ProductLine() {
+        this.id = id;
+    }
 }

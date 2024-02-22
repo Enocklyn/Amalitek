@@ -40,12 +40,7 @@ public class User implements UserDetails{
     private String email;
     private String password ;
 
-    public User(int id) {
-        Id = id;
-    }
-    public User() {
 
-    }
 
     @Enumerated(EnumType.STRING)
      private Role role;
