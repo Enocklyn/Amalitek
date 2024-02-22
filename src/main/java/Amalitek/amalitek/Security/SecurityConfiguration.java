@@ -31,7 +31,7 @@ public class SecurityConfiguration {
       
     http.headers().frameOptions().disable();
     http.authorizeHttpRequests(
-            c->c.requestMatchers("/api/**","/h4","/h4/**").permitAll()
+            c->c.requestMatchers("/api/v1/auth/**","/h4","/h4/**").permitAll()
                     .anyRequest().authenticated());
     http.sessionManagement(c->c.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
     http.authenticationProvider(authenticationProvider ).addFilterBefore(JwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

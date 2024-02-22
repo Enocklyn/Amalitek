@@ -4,8 +4,10 @@
  */
 package Amalitek.amalitek.Product;
 
+import Amalitek.amalitek.Order.Order;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -18,4 +20,6 @@ public interface ProductService {
     public  Product EditProduct (Product product);
     public  void DeleteProduct (int productId);
     public Optional<Product> FindProduct (int ProductId);
+//    Query to get all products for a specific order
+    public List<Product> product(Order order);
 }

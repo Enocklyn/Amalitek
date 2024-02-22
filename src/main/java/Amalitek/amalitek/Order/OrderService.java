@@ -20,4 +20,6 @@ import java.util.List;
 public interface OrderService {
     public List<Order> findAllOrders();
     public List<Order>FindOrderByUser(User user);
+  //  t all orders for a specific user.
+    //Query to get all products for a specific order
 }
