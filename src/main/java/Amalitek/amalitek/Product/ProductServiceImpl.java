@@ -1,8 +1,11 @@
 package Amalitek.amalitek.Product;
 
+import Amalitek.amalitek.Order.Order;
+import Amalitek.amalitek.ProductLine.ProductLine;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -46,5 +49,10 @@ private final ProductRepository Pr;
     @Override
     public Optional<Product> FindProduct(int ProductId) {
       return Pr.findById(ProductId);
+    }
+
+    @Override
+    public List<Product> product(Order order) {
+        return order.getProductLine().stream().map(ProductLine::getProduct).toList();
     }
 }
