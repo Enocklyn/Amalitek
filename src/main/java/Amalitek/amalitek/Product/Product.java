@@ -33,7 +33,16 @@ public class Product {
     public List<ProductLine> getProductlines() {
         return productlines;
     }
+    private boolean Active;
 
+    public boolean isActive() {
+        return Active;
+    }
+
+    public void setActive(boolean Active) {
+        this.Active = Active;
+    }
+    
     public void setProductlines(List<ProductLine> productlines) {
         this.productlines = productlines;
     }
