@@ -40,4 +40,9 @@ public class OrderServiceImpl implements  OrderService{
         }
 
     }
+
+    @Override
+    public Order saveOrder(Order order) {
+        return repo.save(order);
+    }
 }
