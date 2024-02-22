@@ -34,4 +34,6 @@ public class AuthenticationController {
         (@RequestBody RegisterResquest request){
        return ResponseEntity.ok(authenticationService.authentication(request));
         }
+
+
 }
