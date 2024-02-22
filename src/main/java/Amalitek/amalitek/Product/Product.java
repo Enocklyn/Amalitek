@@ -9,6 +9,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -19,6 +23,10 @@ import java.util.List;
  *
  * @author lys
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "_Product")
 public class Product {
@@ -30,53 +38,11 @@ public class Product {
    @OneToMany(mappedBy="product")
    private List<ProductLine>productlines;
 
-    public List<ProductLine> getProductlines() {
-        return productlines;
-    }
+
     private boolean Active;
 
-    public boolean isActive() {
-        return Active;
-    }
 
-    public void setActive(boolean Active) {
-        this.Active = Active;
+    public Product(int Id) {
+        this.Id=Id;
     }
-    
-    public void setProductlines(List<ProductLine> productlines) {
-        this.productlines = productlines;
-    }
-   
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int Id) {
-        this.Id = Id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-    
 }

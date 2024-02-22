@@ -23,19 +23,28 @@ private final ProductRepository Pr;
     @Override
     public Product EditProduct(Product product) {
        try{
-
+       if (FindProduct(product.getId()).isPresent()){
+        return Pr.save(product);
+       }else{
+           return null;
+       }
        }catch (Exception ex){
-
+        return null;
        }
     }
 
     @Override
     public void DeleteProduct(int productId) {
+         try{
+              Pr.delete(new Product(productId));
+         }catch (Exception ex){
+           System.out.println(ex);
 
+         }
     }
 
     @Override
     public Optional<Product> FindProduct(int ProductId) {
-        return Optional.empty();
+      return Pr.findById(ProductId);
     }
 }
