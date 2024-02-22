@@ -6,14 +6,16 @@ package Amalitek.amalitek.Product;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
  *
  * @author lys
  */
 @Service
 public interface ProductService {
-    public  Product AddProduct (Product product);
+    public  Product CreateProduct (Product product);
     public  Product EditProduct (Product product);
     public  void DeleteProduct (int productId);
-    
+    public Optional<Product> FindProduct (int ProductId);
 }
