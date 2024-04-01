@@ -4,13 +4,13 @@ query:Query
 }
 type Query {
 
-getAllOrder:[Order]
-findOrder(id: Integer): Order
+getAllOrder:[OrderResponse]
+findOrder(email: String): OrderResponse
 
 }
 type Order [
 id: Integer
-User:(email:String )
+email:String
 productLine:[id:Integer, stock:Integer, price: float , quantity : Integer, {Product: {name: String, stock: Integer , price:Float}}]
 
 
