@@ -21,9 +21,13 @@ import java.util.List;
 public class OrderServiceImpl implements  OrderService{
     private final OrderRepository repo;
     private final UserService us;
-    public List<Order> findAllOrders(){
+    public List<OrderResponse> findAllOrders(){
         try{
-            return repo.findAll();
+            List<OrderResponse> responses =new ArrayList<>();
+            repo.findAll().forEach(c->{
+            responses.add(new OrderResponse(c));
+            });
+            return responses;
 
         }catch (Exception ex){
             return new ArrayList<>();
@@ -31,10 +35,15 @@ public class OrderServiceImpl implements  OrderService{
         }
 
     }
-    public List<Order>FindOrderByUser(User user){
+    public List<OrderResponse>FindOrderByUser(User user){
         try{
-
-            return us.FindUserById(user).orElseThrow().getOrders();
+ List<OrderResponse> responses =new ArrayList<>();
+           us.FindUserById(user).orElseThrow().getOrders().forEach(c->{
+            responses.add(new OrderResponse(c));
+            });
+            return responses;
+         
+            
         }catch (Exception ex){
             return null;
         }
@@ -42,7 +51,9 @@ public class OrderServiceImpl implements  OrderService{
     }
 
     @Override
-    public Order saveOrder(Order order) {
-        return repo.save(order);
-    }
+    public OrderResponse saveOrder(Order order)throws Exception {
+      
+        return new OrderResponse(repo.save(order));
+       
+        }
 }

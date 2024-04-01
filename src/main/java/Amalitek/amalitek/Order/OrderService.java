@@ -18,9 +18,9 @@ import java.util.List;
  */
 @Service
 public interface OrderService {
-    public List<Order> findAllOrders();
-    public List<Order>FindOrderByUser(User user);
-    public Order saveOrder(Order oder);
+    public List<OrderResponse> findAllOrders();
+    public List<OrderResponse>FindOrderByUser(User user);
+    public OrderResponse saveOrder(Order oder)throws Exception ;
 
   //  t all orders for a specific user.
     //Query to get all products for a specific order
